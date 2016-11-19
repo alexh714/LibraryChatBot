@@ -22,12 +22,31 @@
         <!-- Add your site or application content here -->
         <div id="wrapper">
         
-        <p id="chatbox"></p>         
-        <form name="messagelog" action="">
-        <input name="usermsg" type="text" id="usermsg" size="65"/>
-        <input name="submitmsg" type="submit" id="submitid" value="Enter"/>
-        </form>
+        <p id="chatbox">W</p>         
+        
+        <input name="usermessage" type="text" id="usermsg" size="65"/>
+        <!--<input name="submitmsg" type="submit" id="submitmsg" value="Enter"/>-->
+        
+        <button onclick="myFunction()">Enter</button>
 		  </div>
+		  <script>
+				function myFunction() {
+					var output = "reservation";
+					var oldtext = document.getElementById("chatbox").innerHTML;		
+					var mystring = document.getElementById("usermsg").value;
+					
+					if(output == "reservation"){
+					var nextext = "<> a link"
+					}
+					else{
+					var nextext = oldtext +"<br>"+ mystring;
+					}
+				document.getElementById("chatbox").innerHTML = nextext; 	   				
+    				    				
+    				
+    				
+			}
+</script>
 		  <!--        
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
