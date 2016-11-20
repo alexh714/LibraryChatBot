@@ -20,26 +20,32 @@
         
         <input name="usermessage" type="text" id="usermsg" size="65"/>
         
-        <button onclick="myFunction()">Enter</button>
+        <button onclick="makeStringFunction()">Enter</button>
 		  </div>
 		  <script>
-				function myFunction() {
-					var output = "reservations";
+				function makeStringFunction() {
+					
 					var oldtext = document.getElementById("chatbox").innerHTML;		
 					var mystring = document.getElementById("usermsg").value;
-					var nextext = oldtext +"<br>"+ mystring;
-					document.getElementById("chatbox").innerHTML = nextext;
-					if(mystring.includes("reservation") || mystring.includes("reservations")){
-						var answerstring = "For Reservations please <a href=\"roomreservation.html\"> click here</a>."
 					
-						document.getElementById("chatbox").innerHTML = answerstring;
+					<!--document.getElementById("chatbox").innerHTML = nextext;-->
+					if(mystring.includes("reservation") || mystring.includes("reservations")){
+						var answerstring = "<br>" + "For Reservations please <a href=\"roomreservation.html\"> click here</a>."
+						//var answerstring = nextext + "<br>" + answer1;								
+						//document.getElementById("chatbox").innerHTML = answerstring;
 					}
 					else{
-						//receiver answer from Diego's javascript
+						
+						var answerstring = ""; //receiver answer from Diego's javascriptthen store that in there 
 					}
+					var nextext = oldtext + "<br>" + mystring + answerstring; 
+					document.getElementById("chatbox").innerHTML = nextext;
 					<!-- scroll to the bottom when we add text -->
 				   var elementscroll = document.getElementById("chatbox");
-				   elementscroll.scrollTop = elementscroll.scrollHeight;			
+				   elementscroll.scrollTop = elementscroll.scrollHeight;
+				   
+				   document.getElementById("usermsg").value = "";
+				   			
 			}
 </script>
 		  
