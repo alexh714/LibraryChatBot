@@ -98,11 +98,16 @@ textarea {
 	
 	margin-right: auto;
 	margin-left: auto;
-	width: 960px;
+	width: 95%;
+	max-width: 900px;
 	
 }
-#chatbox p{
-	width: 90%;
+#chatbox {
+	width: 80%;
+	height: 300px;
+	overflow-y: scroll;
+	border-style: inset;
+	 
 }
 
 
