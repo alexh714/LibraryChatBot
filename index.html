@@ -10,17 +10,49 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         
     </head>
     <body>
        
-        <div id="wrapper">
+		          
+            <nav class='navbar navbar-inverse'>
+        <div class='container-fluid'>
+            <div class='navbar-header'>
+                <a class='navbar-brand' href='http://www.csub.edu/library'>CSUB Libary</a>
+            </div>
+            <ul class='nav navbar-nav'>
+                <li><a href='#'>ChatBot</a></li>
+                <li><a href='http://www.cs.csub.edu/~azavala/chatbox/roomReservation.html'>RoomReservation</a></li>
+            </ul>
+        </div>
+    </nav>
+        <div class="jumbotron">
+		  <h1>Library Chat Bot</h1>
+		  </div>
+		  <div id="wrapper">
+		  <div id="nav_links">
+		  <ul><h3>Popular Books</h3>
+		  <li>In Search Of Lost Time By Marcel Proust</li>
+		  <li>Ulysses By James Joyce</li>
+		  <li>Don Quixote By Miguel De Cervantes</li>
+		  <li>Moby Dick By Herman Melville</li>
+		  <li>Hamlet By William Shakespeare</li>
+		  </ul>
+		  </div>
+		  <div>
+        <p id="chatbox">
+        Usage:<br> I'm looking for Moby Dick By Herman Melville
+        <br>
+        I'm looking for a sci-fi book
+        <br>
+        I'm to want to reserve a room 
+        </p>         
         
-        <p id="chatbox"></p>         
-        
-        <input name="usermessage" type="text" id="usermsg" size="65"/>
+        <input name="usermessage" type="text" id="usermsg" size="65pix"/>
         
         <button onclick="makeStringFunction()">Enter</button>
+	     </div>
 		  </div>
 		  <script>
 				function makeStringFunction() {
@@ -30,15 +62,16 @@
 					
 					<!--document.getElementById("chatbox").innerHTML = nextext;-->
 					if(mystring.includes("reservation") || mystring.includes("reservations")){
-						var answerstring = "<br>" + "For Reservations please <a href=\"roomreservation.html\"> click here</a>."
+						var answerstring = "<br>" + "ChatBot: " + "For Reservations please <a href=\"http://cs.csub.edu/~azavala/chatbox/roomReservation.html\"> click here</a>."
 						//var answerstring = nextext + "<br>" + answer1;								
 						//document.getElementById("chatbox").innerHTML = answerstring;
 					}
 					else{
 						
-						var answerstring = ""; //receiver answer from Diego's javascriptthen store that in there 
+						var answerstring = "ChatBot: " + "output"; //receiver answer from Diego's javascriptthen store that in there
+						var answerstring = ""; 
 					}
-					var nextext = oldtext + "<br>" + mystring + answerstring; 
+					var nextext = oldtext + "<br>" + "You: " + mystring + answerstring; 
 					document.getElementById("chatbox").innerHTML = nextext;
 					<!-- scroll to the bottom when we add text -->
 				   var elementscroll = document.getElementById("chatbox");
